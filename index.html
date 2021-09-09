@@ -1,81 +1,153 @@
-<html>
-	<head>
-		<meta name="robots" content="noindex">
-		<script>
-			window.console = window.console || function(t) {};
-		  </script>
-		  <script>
-			if (document.location.search.match(/type=embed/gi)) {
-			  window.parent.postMessage("resize", "*");
-			}
-		  </script>
-	</head>
-	<body>
-		<div id="burningman">
-			<figure>
-				<img src="images/chaos-1.png" alt>
-			</figure>
-			<figure>
-				<img src="images/chaos-2.png" alt>
-			</figure>
-			<figure>
-				<img src="images/chaos-3.png" alt>
-			</figure>
-			<figure>
-				<img src="images/chaos-4.png" alt>
-			</figure>
-			<figure>
-				<img src="images/chaos-5.png" alt>
-			</figure>
-			<figure>
-				<img src="images/chaos-6.png" alt>
-			</figure>
-			<figure>
-				<img src="images/chaos-7.png" alt>
-			</figure>
-			<figure>
-				<img src="images/chaos-8.png" alt>
-			</figure>
-			<figure>
-				<img src="images/chaos-9.png" alt>
-			</figure>
-			<figure>
-				<img src="images/chaos-10.png" alt>
-			</figure>
-		</div>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<html lang="en"><head>
+
+	<meta charset="UTF-8">
+	
+  <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  
+  <link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  
+  
+	<title>CodePen - Randomized Images Using Flexbox &amp; JavaScript</title>
+	
+	
+	
+	
+  <style>
+  * { box-sizing: border-box; }
+  body { 
+	font-family: Avenir, Arial, sans-serif; 
+	background: #222; 
+	margin: 2rem;
+	color: #fff;
+  }
+  #burningman { 
+	display: flex; 
+	flex-flow: row wrap;
+	font-size: 0; 
+  }
+  #burningman figure { 
+	flex: 1; 
+	margin: 0; 
+	min-width: 300px;
+	position: relative;
+	overflow: hidden; 
+  }
+  #burningman figure figcaption { 
+	background: rgba(0,0,0,0.4); 
+	font-size: 1.1rem; 
+	position: absolute;
+	bottom: 0; width: 100%;
+	padding: .5rem; 
+	opacity: 0;
+	transition: .5s; 
+  }
+  a { 
+	color: inherit;
+	text-decoration: none;
+	font-style: italic; 
+  }
+  #burningman figure:hover img.visible + figcaption { opacity: 1; }
+  #burningman figure img { 
+	width: 100%;
+	height: auto; 
+	opacity: 0;
+	transition: .5s; 
+  }
+  #burningman figure.halvies { 
+	flex: .5015;
+	min-width: 150px; 
+  }
+  #burningman figure 
+  
+  img.visible { opacity: 1; }
+  #burningman + p { font-size: 1.1rem; }
+  @media all and (max-width: 500px) {
+	#burningman {flex-direction: column; }
+  }
+  </style>
+  
+	<script>
+	window.console = window.console || function(t) {};
+  </script>
+  
+	
+	
+	<script>
+	if (document.location.search.match(/type=embed/gi)) {
+	  window.parent.postMessage("resize", "*");
+	}
+  </script>
+  
+  
+  </head>
+  
+  <body translate="no">
+	<div id="burningman">
+  
+  
+  
+  
+  
+  <figure>
+	  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/the-great-heads.jpg" alt="" class="visible">
+	  <figcaption><a href="http://embrace2014.com/">Embrace</a>, Burning Man 2014</figcaption>
+  </figure><figure>
+		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/believe-burning-man.jpg" alt="" class="visible">
+		<figcaption>Believe, Burning Man 2014</figcaption>
+  </figure><figure class="halvies">
+		  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/burning-man-pyre.jpg" alt="" class="visible">
+		 <figcaption><a href="https://www.indiegogo.com/projects/truth-is-beauty-the-bliss-project-fa">Truth is Beauty</a>, Burning Man 2013</figcaption>
+  </figure><figure>
+	  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/foot-of-the-statue.jpg" alt="" class="visible">
+	 <figcaption><a href="https://www.indiegogo.com/projects/truth-is-beauty-the-bliss-project-fa">Truth is Beauty</a>, Burning Man 2013</figcaption>
+  </figure><figure>
+	  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/love-bike.jpg" alt="" class="visible">
+	  <figcaption>Love Bike, Burning Man 2014</figcaption>
+  </figure></div>
+  <p>Refresh page or resize browswer to randomize; mouseover or touch images for more info. Photographs by <a href="http://stuckincustoms.smugmug.com/Burning-Man-Page">Trey Ratcliff</a>.</p>
+	  <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+  
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script id="rendered-js">
-			function randomize() {
-			  for (var i = rando.children.length; i >= 0; i--) {if (window.CP.shouldStopExecution(0)) break;
-				rando.appendChild(rando.children[Math.random() * i | 0]);
-			  }window.CP.exitedLoop(0);
-			}
-			
-			function makeVis(j) {
-			  var photo = rando.children[j].firstElementChild;
-			  setTimeout(function () {photo.classList.add("visible");}, 700 * j);
-			}
-			
-			function sequentize() {
-			  for (var j = 0; j <= rando.children.length; ++j) {if (window.CP.shouldStopExecution(1)) break;
-				makeVis(j);}window.CP.exitedLoop(1);
-			}
-			
-			var rando = document.getElementById('burningman'),waiter;
-			
-			function fsort() {
-			  randomize();
-			  sequentize();
-			}
-			
-			window.onresize = function () {
-			  clearTimeout(waiter);
-			  waiter = setTimeout(fsort, 1000);
-			};
-			
-			fsort();
-			//# sourceURL=pen.js
-		</script>
-		
-	</body>
-</html>
+  function randomize() {
+	for (var i = rando.children.length; i >= 0; i--) {if (window.CP.shouldStopExecution(0)) break;
+	  rando.appendChild(rando.children[Math.random() * i | 0]);
+	}window.CP.exitedLoop(0);
+  }
+  
+  function makeVis(j) {
+	var photo = rando.children[j].firstElementChild;
+	setTimeout(function () {photo.classList.add("visible");}, 700 * j);
+  }
+  
+  function sequentize() {
+	for (var j = 0; j <= rando.children.length; ++j) {if (window.CP.shouldStopExecution(1)) break;
+	  makeVis(j);}window.CP.exitedLoop(1);
+  }
+  
+  var rando = document.getElementById('burningman'),waiter;
+  
+  function fsort() {
+	randomize();
+	sequentize();
+  }
+  
+  window.onresize = function () {
+	clearTimeout(waiter);
+	waiter = setTimeout(fsort, 1000);
+  };
+  
+  fsort();
+  //# sourceURL=pen.js
+	  </script>
+  
+	
+  
+  
+  
+  
+   
+  </body></html>
