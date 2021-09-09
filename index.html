@@ -22,7 +22,7 @@
   #burningman figure { 
 	flex: 1; 
 	margin: 0; 
-	min-width: 300px;
+	min-width: 180px;
 	position: relative;
 	overflow: hidden; 
   }
@@ -31,13 +31,7 @@
 	text-decoration: none;
 	font-style: italic; 
   }
-  #burningman figure:hover img.visible + figcaption { opacity: 1; }
-  #burningman figure img { 
-	width: 100%;
-	height: auto; 
-	opacity: 0;
-	transition: .5s; 
-  }
+
   #burningman figure.halvies { 
 	flex: .5015;
 	min-width: 150px; 
@@ -112,10 +106,7 @@
 	}window.CP.exitedLoop(0);
   }
   
-  function makeVis(j) {
-	var photo = rando.children[j].firstElementChild;
-	setTimeout(function () {photo.classList.add("visible");}, 700 * j);
-  }
+
   
   function sequentize() {
 	for (var j = 0; j <= rando.children.length; ++j) {if (window.CP.shouldStopExecution(1)) break;
