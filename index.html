@@ -1,32 +1,72 @@
-<div id="burningman">
-<figure>
-	<img src="images/chaos-1.png" alt>
-</figure>
-<figure>
-	<img src="images/chaos-2.png" alt>
-</figure>
-<figure>
-	<img src="images/chaos-3.png" alt>
-</figure>
-<figure>
-	<img src="images/chaos-4.png" alt>
-</figure>
-<figure>
-	<img src="images/chaos-5.png" alt>
-</figure>
-<figure>
-	<img src="images/chaos-6.png" alt>
-</figure>
-<figure>
-	<img src="images/chaos-7.png" alt>
-</figure>
-<figure>
-	<img src="images/chaos-8.png" alt>
-</figure>
-<figure>
-	<img src="images/chaos-9.png" alt>
-</figure>
-<figure>
-	<img src="images/chaos-10.png" alt>
-</figure>
-</div>
+<html>
+	<head>
+		<meta name="robots" content="noindex">
+	</head>
+	<body>
+		<div id="burningman">
+			<figure>
+				<img src="images/chaos-1.png" alt>
+			</figure>
+			<figure>
+				<img src="images/chaos-2.png" alt>
+			</figure>
+			<figure>
+				<img src="images/chaos-3.png" alt>
+			</figure>
+			<figure>
+				<img src="images/chaos-4.png" alt>
+			</figure>
+			<figure>
+				<img src="images/chaos-5.png" alt>
+			</figure>
+			<figure>
+				<img src="images/chaos-6.png" alt>
+			</figure>
+			<figure>
+				<img src="images/chaos-7.png" alt>
+			</figure>
+			<figure>
+				<img src="images/chaos-8.png" alt>
+			</figure>
+			<figure>
+				<img src="images/chaos-9.png" alt>
+			</figure>
+			<figure>
+				<img src="images/chaos-10.png" alt>
+			</figure>
+		</div>
+		<script id="rendered-js">
+			function randomize() {
+			  for (var i = rando.children.length; i >= 0; i--) {if (window.CP.shouldStopExecution(0)) break;
+				rando.appendChild(rando.children[Math.random() * i | 0]);
+			  }window.CP.exitedLoop(0);
+			}
+			
+			function makeVis(j) {
+			  var photo = rando.children[j].firstElementChild;
+			  setTimeout(function () {photo.classList.add("visible");}, 700 * j);
+			}
+			
+			function sequentize() {
+			  for (var j = 0; j <= rando.children.length; ++j) {if (window.CP.shouldStopExecution(1)) break;
+				makeVis(j);}window.CP.exitedLoop(1);
+			}
+			
+			var rando = document.getElementById('burningman'),waiter;
+			
+			function fsort() {
+			  randomize();
+			  sequentize();
+			}
+			
+			window.onresize = function () {
+			  clearTimeout(waiter);
+			  waiter = setTimeout(fsort, 1000);
+			};
+			
+			fsort();
+			//# sourceURL=pen.js
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	</body>
+</html>
